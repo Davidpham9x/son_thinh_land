@@ -1,0 +1,80 @@
+.page-home {}
+
+
+/*
+** HOTLINE
+*/
+
+.hotline {
+    background-color: #b0a37c;
+    padding: 25px 30px;
+    @include ab( 0, n, n, 0);
+    .title {
+        color: #fff;
+        font-size: 17px;
+        font-family: $font-sfus;
+        text-transform: uppercase;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            &:before {
+                content: "• ";
+                color: white;
+            }
+            a {
+                color: #fff;
+                font-size: 17px;
+                font-family: $font-sfus;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+/* Register */
+.register {
+    padding: 80px 0 110px;
+
+    .container {
+        margin-top: 40px;
+        background-color: #f6f6f6;
+    }
+}
+
+/* Form */
+.form {
+    border: 1px solid #e1e1e1;
+    padding: 70px 80px;
+    background: url('../images/global/bg-register-left.png') no-repeat left bottom, url('../images/global/bg-register-right.png') no-repeat right top;
+}
+
+.form__field {
+    margin-top: 45px;
+    &:first-child {
+        margin-top: 0;
+    }
+    .button__wrapper {
+        text-align: center;
+    }
+}
+.form__field--two-col {
+    .col {
+        width: 48%;
+        float: right;
+        &:first-child {
+            float: left;
+        }
+    }
+}
+
+.form__label {
+    display: block;
+    color: #a4966e;
+    font-size: 12px;
+    font-family: $font-sfus;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}

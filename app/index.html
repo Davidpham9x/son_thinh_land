@@ -1,41 +1,78 @@
-<!doctype html>
-<html lang="">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>son_thinh_land</title>
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-</head>
-
-<body>
-    <div class="hero-unit">
-        <h1>'Allo, 'Allo!</h1>
-        <p>You now have</p>
+<include src="partials/head.html"></include>
+<include src="partials/header.html"></include>
+<main class="page page-home">
+    <!-- /* Masthead */ -->
+    <section class="masthead">
+        <div class="masthead__banner">
+            <figure>
+                <img src="images/masthead/slider-img-1.jpg" alt="">
+                <figcaption>
+                    <span class="text">Ngân hàng Sacombank hỗ trợ đến 70% giá trị căn hộ</span>
+                    <a href="" title="Đăng ký ngay" class="button button--short">Đăng ký ngay</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/masthead/slider-img-2.jpg" alt="">
+                <figcaption>
+                    <span class="text">Sỡ hữu lâu dài</span>
+                    <span class="text text-small">Một trong số ít các dự án bất động sản ven biển được sở hữu lâu dài</span>
+                    <a href="" title="Đăng ký ngay" class="button button--short">Đăng ký ngay</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/masthead/slider-img-3.jpg" alt="">
+                <figcaption>
+                    <span class="text">Sơn thịnh ocean view</span>
+                    <span class="text text-small">Cơ hội sở hữu căn hộ mặt tiền biển đẹp nhất tại Vũng Tàu</span>
+                    <a href="" title="Đăng ký ngay" class="button button--short">Đăng ký ngay</a>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+    <!-- /* Hotline */ -->
+    <section class="hotline">
+        <h4 class="title">Hotline liên hệ:</h4>
         <ul>
-            <li>HTML5 Boilerplate</li>
-            <li>Sass</li>
-            <li>jQuery</li>
+            <li><a href="tel:0125 977 7777" title="0125 977 7777">0125 977 7777</a></li>
+            <li><a href="tel:0934 010 313" title="0934 010 313">0934 010 313</a></li>
         </ul>
-    </div>
-
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
-</body>
-
-</html>
+    </section>
+    <!-- /* Gallery */ -->
+    <section class="gallery">
+        <h2 class="heading">Thư viện</h2>
+    </section>
+    <!-- /* Register */ -->
+    <section class="register">
+        <h2 class="heading">Đăng ký tham quan dự án</h2>
+        <div class="container">
+            <form action="" class="form">
+                <div class="form__field form__field--two-col clearfix">
+                    <div class="col">
+                        <label class="form__label" for="txt-fname">Họ và tên *</label>
+                        <div class="input-text">
+                            <input type="text" class="txt-fname" name="txt-fname" id="txt-fname">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label class="form__label" for="txt-mobile-phone">Số điện thoại *</label>
+                        <div class="input-text">
+                            <input type="number" class="txt-mobile-phone" name="txt-mobile-phone" id="txt-mobile-phone">
+                        </div>
+                    </div>
+                </div>
+                <div class="form__field">
+                    <label class="form__label" for="txt-email">Địa chỉ email *</label>
+                    <div class="input-text">
+                        <input type="email" class="txt-email" name="txt-email" id="txt-email">
+                    </div>
+                </div>
+                <div class="form__field">
+                    <div class="button__wrapper">
+                        <a href="" class="button" title="Đăng Ký Ngay">Đăng Ký Ngay</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+<include src="partials/footer.html"></include>
