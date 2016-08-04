@@ -4,6 +4,27 @@
 
 .masthead {
     position: relative;
+
+    /* Figure */
+    figure {
+        margin: 0;
+        padding: 0;
+        img {
+            width: 100%;
+        }
+    }
+
+
+    /* Figcaption */
+    figcaption {
+        width: 100%;
+        max-width: 640px;
+        padding: 0 10px;
+        @include ab( 30%, 20%, n, n);
+        @include screen ( medium) {
+            padding: 0;
+        }
+    }
 }
 
 .masthead__banner {
@@ -86,28 +107,5 @@
             background: url('../images/icons/slick-prev.png') no-repeat;
             left: 60px;
         }
-    }
-}
-
-/* Figure */
-
-figure {
-    margin: 0;
-    padding: 0;
-    img {
-        width: 100%;
-    }
-}
-
-
-/* Figcaption */
-
-figcaption {
-    width: 100%;
-    max-width: 640px;
-    padding: 0 10px;
-    @include ab( 30%, 20%, n, n);
-    @include screen ( medium) {
-        padding: 0;
     }
 }
