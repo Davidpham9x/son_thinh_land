@@ -1,18 +1,38 @@
 @font-face {
-    font-family: 'sfusalzburgmedium';
-    src: url('../fonts/sfusalzburgmedium.eot');
-    src: url('../fonts/sfusalzburgmedium.eot') format('embedded-opentype'), url('../fonts/sfusalzburgmedium.woff2') format('woff2'), url('../fonts/sfusalzburgmedium.woff') format('woff'), url('../fonts/sfusalzburgmedium.ttf') format('truetype'), url('../fonts/sfusalzburgmedium.svg#sfusalzburgmedium') format('svg');
-}
-
-@font-face {
-    font-family: 'sfutoledo';
-    src: url('../fonts/sfutoledomedium.eot');
-    src: url('../fonts/sfutoledomedium.eot') format('embedded-opentype'), url('../fonts/sfutoledomedium.woff2') format('woff2'), url('../fonts/sfutoledomedium.woff') format('woff'), url('../fonts/sfutoledomedium.ttf') format('truetype'), url('../fonts/sfutoledomedium.svg#sfutoledomedium') format('svg');
-}
-
-@font-face {
-    font-family: 'sfutoledo';
+    font-family: "SFU Toledo";
+    src: url("../fonts/sfutoledobold.eot");
+    /* IE9 */
+    src: url("../fonts/sfutoledobold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/sfutoledobold.woff") format("woff"), /* chrome, firefox */
+    url("../fonts/sfutoledobold.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("../fonts/sfutoledobold.svg#SFU Toledo") format("svg");
+    /* iOS 4.1- */
+    font-style: normal;
     font-weight: bold;
-    src: url('../fonts/sfutoledobold.eot');
-    src: url('../fonts/sfutoledobold.eot') format('embedded-opentype'), url('../fonts/sfutoledobold.woff2') format('woff2'), url('../fonts/sfutoledobold.woff') format('woff'), url('../fonts/sfutoledobold.ttf') format('truetype'), url('../fonts/sfutoledobold.svg#sfutoledobold') format('svg');
+}
+
+@font-face {
+    font-family: "SFU Salzburg";
+    src: url("../fonts/sfusalzburgmedium.eot");
+    /* IE9 */
+    src: url("../fonts/sfusalzburgmedium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/sfusalzburgmedium.woff") format("woff"), /* chrome, firefox */
+    url("../fonts/sfusalzburgmedium.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("../fonts/sfusalzburgmedium.svg#SFU Salzburg") format("svg");
+    /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "SFU Toledo";
+    src: url("../fonts/sfutoledomedium.eot");
+    /* IE9 */
+    src: url("../fonts/sfutoledomedium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/sfutoledomedium.woff") format("woff"), /* chrome, firefox */
+    url("../fonts/sfutoledomedium.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("../fonts/sfutoledomedium.svg#SFU Toledo") format("svg");
+    /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
 }
