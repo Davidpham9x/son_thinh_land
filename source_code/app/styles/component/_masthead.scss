@@ -1,0 +1,111 @@
+/*
+** MASTHEAD
+*/
+
+.masthead {
+    position: relative;
+
+    /* Figure */
+    figure {
+        margin: 0;
+        padding: 0;
+        img {
+            width: 100%;
+        }
+    }
+
+
+    /* Figcaption */
+    figcaption {
+        width: 100%;
+        max-width: 640px;
+        padding: 0 10px;
+        @include ab( 30%, 20%, n, n);
+        @include screen ( medium) {
+            padding: 0;
+        }
+    }
+}
+
+.masthead__banner {
+    figcaption {
+        .text {
+            color: #fff;
+            font-size: 30px;
+            line-height: normal;
+            display: block;
+            text-transform: uppercase;
+            font-family: $font-sfut;
+            text-shadow: -1px 1px 8px rgba(55, 55, 55, 0.54);
+            @include screen( medium) {
+                font-size: 26px;
+            }
+            @include screen( ipad) {
+                font-size: 47px;
+            }
+        }
+        .text-small {
+            font-family: $font-sfus;
+            @include screen( medium) {
+                font-size: 26px;
+            }
+            @include screen( ipad) {
+                font-size: 24px;
+            }
+        }
+        .button {
+            margin-top: 35px;
+        }
+    }
+    .slick-dots {
+        font-size: 0;
+        line-height: 0;
+        width: 100%;
+        text-align: center;
+        @include ab( n, 0, 20px, n);
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 5px;
+            font-size: 0;
+            line-height: 0;
+            &.slick-active {
+                button {
+                    border-color: rgba( 255, 255, 255, 1 );
+                }
+            }
+            button {
+                background: transparent;
+                text-indent: -9999px;
+                border: none;
+                padding: 0;
+                font-size: 0;
+                border: 6px solid rgba( 255, 255, 255, 0.3 );
+                width: 0;
+                height: 0;
+                cursor: pointer;
+                @include border-radius ( 50%, 50%, 50%, 50%);
+            }
+        }
+    }
+    .slick-arrow {
+        border: 0;
+        background: none;
+        text-indent: -9999px;
+        position: absolute;
+        top: 50%;
+        width: 28px;
+        height: 63px;
+        margin-top: -31px;
+        cursor: pointer;
+        z-index: 2;
+        &.slick-next {
+            background: url('../images/icons/slick-next.png') no-repeat;
+            right: 60px;
+        }
+        &.slick-prev {
+            background: url('../images/icons/slick-prev.png') no-repeat;
+            left: 60px;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+/*
+** FOOTER
+*/
+
+footer {
+	text-align: center;
+	font-family: $font-sfus;
+	font-size: 12px;
+	color: black;
+	text-transform: uppercase;
+	padding: 60px 0 5px;
+	background-color: #f6f6f6;
+
+	a {
+		color: black;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	hr {
+		border-color: #e6e3db;
+	}
+}

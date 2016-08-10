@@ -30,6 +30,8 @@ var isMobile = {
             this.initMasheadSlider();
             this.initGallery();
             this.initHandleWebsiteResize();
+
+            /*goldenLand.Global.initModalSuccessful();*/
         },
 
         initFormElements: function() {
@@ -132,6 +134,26 @@ var isMobile = {
 
                 if (window.windowWidth <= 640) {} else {}
             }).trigger('resize');
+        },
+
+        initModalSuccessful: function () {
+            $.magnificPopup.open({
+                items: {
+                    src: '#successful-modal',
+                    type: 'inline',
+                    closeOnContentClick: false,
+                    closeOnBgClick: false,
+                    closeBtnInside: false,
+                    showCloseBtn: false,
+                    enableEscapeKey: false
+                }
+            });
+
+            $('#successful-modal').find('.close').off('click').on('click', function (e) {
+                e.preventDefault();
+
+                $.magnificPopup.close();
+            });
         }
     };
 })(jQuery);
