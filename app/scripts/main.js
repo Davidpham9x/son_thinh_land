@@ -97,6 +97,18 @@ var isMobile = {
             }
         },
 
+        initGallerySlider: function() {
+            if ($('.zoom-gallery').length && $('.zoom-gallery').children().length > 2) {
+                $('.zoom-gallery').slick({
+                    infinite: true,
+                    speed: 500,
+                    // fade: true,
+                    cssEase: 'linear',
+                    dots: true
+                });
+            }
+        },
+
         initGallery: function() {
             if ($('.zoom-gallery').length && $('.zoom-gallery').children().length > 2) {
                 $('.zoom-gallery').magnificPopup({
@@ -132,7 +144,11 @@ var isMobile = {
             $(window).resize(function() {
                 window.windowWidth = $(window).width();
 
-                if (window.windowWidth <= 640) {} else {}
+                if (window.windowWidth <= 480) {
+                    goldenLand.Global.initGallerySlider();
+                } else {
+                    $('.zoom-gallery').slick('unslick');
+                }
             }).trigger('resize');
         },
 

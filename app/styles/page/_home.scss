@@ -7,18 +7,44 @@
 
 .hotline {
     background-color: #b0a37c;
-    padding: 25px 30px;
+    padding: 10px;
     @include ab( 0, n, n, 0);
+    @include screen ( medium ) {
+        padding: 25px 30px;
+    }
+
+    .inner {
+        position: relative;
+    }
     .title {
         color: #fff;
         font-size: 17px;
         font-family: $font-sfus;
         text-transform: uppercase;
+        display: none;
+        @include screen ( medium ) {
+            display: block;
+        }
+    }
+    .hotline-icon {
+        display: block;
+        background: url('../images/icons/icon-hotline.png') no-repeat;
+        width: 15px;
+        height: 15px;
+
+        @include screen ( medium ) {
+            display: none;
+        }
     }
     ul {
         list-style: none;
         padding: 0;
         margin: 0;
+        display: none;
+        @include screen ( medium ) {
+            display: block;
+        }
+
         li {
             &:before {
                 content: "• ";
@@ -27,7 +53,7 @@
             a {
                 color: #fff;
                 font-size: 17px;
-                font-family: $font-sfus;
+                font-family: $font-ops;
                 text-transform: uppercase;
             }
         }
@@ -36,7 +62,10 @@
 
 /* Introduction */
 .introduction {
-    padding: 80px 0 0;
+    padding: 50px 0 0;
+    @include screen ( medium ) {
+        padding: 80px 0 0;
+    }
 
     .container {
         margin-top: 40px;
@@ -59,6 +88,11 @@
     .interior-main {} */
     .location {
         position: relative;
+        .location__img {
+            img {
+                width: 100%;
+            }
+        }
         .interior__info {
             @include ab( 52px, 60px, n, n );
 
@@ -178,25 +212,87 @@
 
 /* Gallery */
 .gallery {
-    padding: 80px 0 0;
+    padding: 50px 0 0;
+    @include screen ( medium ) {
+        padding: 80px 0 0;
+    }
 
     /* .container {} */
     .grid-items {
-        margin-top: 45px;
+        margin-top: 15px;
         background-color: white;
+        position: relative;
+        @include screen ( small ) {
+            margin-top: 45px;
+        }
+
+        .slick-arrow {
+            position: absolute;
+            top: 50%;
+            z-index: 3;
+            border: none;
+            background: none;
+            text-indent: -99999px;
+            width: 28px;
+            height: 63px;
+            margin-top: -31px;
+            &.slick-prev {
+                background: url('../images/icons/slick-prev.png') no-repeat;
+                left: 20px;
+            }
+            &.slick-next {
+                background: url('../images/icons/slick-next.png') no-repeat;
+                right: 20px;
+            }
+        }
+        .slick-dots {
+            width: 100%;
+            margin: 0;
+            font-size: 0;
+            line-height: 0;
+            text-align: center;
+            @include ab ( n, 0, 10px, n );
+
+            li {
+                padding: 0 3px;
+                display: inline-block;
+                font-size: 0;
+                line-height: 0;
+                &.slick-active {
+                    button {
+                        background: rgba( 255, 255, 255, 1 );
+                    }
+                }
+
+                button {
+                    width: 0;
+                    height: 0;
+                    padding: 0;
+                    font-size: 0;
+                    line-height: 0;
+                    background: none;
+                    border: none;
+                    text-indent: -99999px;
+                    border: 5px solid rgba( 255, 255, 255, 0.5 );
+                    @include border-radius ( 50%, 50%, 50%, 50% );
+                }
+            }
+        }
     }
     .grid-item {
         cursor: pointer;
-        float: left;
         outline: none;
         overflow: hidden;
         text-align: center;
         text-decoration: none;
         position: relative;
-        border: 1px solid white;
-        @include CSSanimate(all, 0.2s, ease-in-out);
-        width: 100%;
         height: 371px;
+        @include screen ( small ) {
+            float: left;
+            border: 1px solid white;
+            @include CSSanimate(all, 0.2s, ease-in-out);
+            width: 100%;
+        }
         @include screen ( ipad ) {
             width: 33.33333%;
         }
@@ -223,6 +319,7 @@
             display: none;
 
             .inner {
+                width: 100%;
                 text-align: center;
                 @include ab ( 50%, 50%, n, n );
                 @include transform( translate( -50%, -50%) );
@@ -235,7 +332,7 @@
                     text-transform: uppercase;
                 }
                 img {
-                    margin-top: 27px;
+                    margin: 27px auto 0;
                 }
             }
         }
@@ -250,23 +347,35 @@
 
 /* Register */
 .register {
-    padding: 80px 0 110px;
+    padding: 50px 0;
+    @include screen ( medium ) {
+        padding: 80px 0 110px;
+    }
 
     .container {
         margin-top: 40px;
-        background-color: #f6f6f6;
+
+        .inner {
+            background-color: #f6f6f6;
+        }
     }
 }
 
 /* Form */
 .form {
     border: 1px solid #e1e1e1;
-    padding: 70px 80px;
     background: url('../images/global/bg-register-left.png') no-repeat left bottom, url('../images/global/bg-register-right.png') no-repeat right top;
+    padding: 20px;
+    @include screen ( medium ) {
+        padding: 70px 80px;
+    }
 }
 
 .form__field {
-    margin-top: 45px;
+    margin-top: 20px;
+    @include screen ( medium ) {
+        margin-top: 45px;
+    }
     &:first-child {
         margin-top: 0;
     }
@@ -276,10 +385,17 @@
 }
 .form__field--two-col {
     .col {
-        width: 48%;
-        float: right;
+        margin-top: 20px;
         &:first-child {
-            float: left;
+            margin-top: 0;
+        }
+        @include screen ( medium ) {
+            width: 48%;
+            float: right;
+            margin-top: 0;
+            &:first-child {
+                float: left;
+            }
         }
     }
 }

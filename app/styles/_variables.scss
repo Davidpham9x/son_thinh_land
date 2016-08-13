@@ -1,6 +1,7 @@
 $font-standard: HelveticaNeue, Helvetica, Arial, sans-serif;
 $font-sfus: 'SFU Salzburg', HelveticaNeue, Helvetica, Arial, sans-serif;
 $font-sfut: 'SFU Toledo', HelveticaNeue, Helvetica, Arial, sans-serif;
+$font-ops: 'Open Sans', HelveticaNeue, Helvetica, Arial, sans-serif;
 $font-size: 16px;
 $base-color: #6a6060;
 $color-hover: #ffdf16;
@@ -8,7 +9,7 @@ $color-link: #ffffff;
 $color-error: #f91059;
 $page-width: 940px;
 $grid: 30px;
-$grid-item-height: 31em;
+$grid-item-height: 23em;
 @mixin spritePos($x, $y, $w, $h) {
     background-image: url(../images/ui.png);
     background-position: #{-($x * $grid)} #{-($y * $grid)};
@@ -180,7 +181,7 @@ $grid-item-height: 31em;
 }
 
 // MEDIA QUERIES
-$breakpoints: ( xs: 340px, small: 480px, medium: 640px, ipadPortrait: 768px, ipad: 1024px, large: 1280px, big: 1366px, );
+$breakpoints: ( xs: 340px, small: 480px, medium: 640px, ipadPortrait: 768px, ipad: 1024px, large: 1280px, big: 1366px );
 @mixin screen($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint) {
         @media (min-width: #{map-get($breakpoints, $breakpoint)}) {

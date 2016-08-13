@@ -31,13 +31,17 @@
     figcaption {
         .text {
             color: #fff;
-            font-size: 30px;
-            line-height: normal;
-            display: block;
-            text-transform: uppercase;
+            font-size: 19px;
             font-family: $font-sfut;
+
+            display: block;
+            line-height: normal;
+
+            text-align: center;
+            text-transform: uppercase;
             text-shadow: -1px 1px 8px rgba(55, 55, 55, 0.54);
             @include screen( medium) {
+                text-align: left;
                 font-size: 26px;
             }
             @include screen( ipad) {
@@ -99,6 +103,10 @@
         margin-top: -31px;
         cursor: pointer;
         z-index: 2;
+        display: none!important;
+        @include screen ( medium ) {
+            display: inline-block!important;
+        }
         &.slick-next {
             background: url('../images/icons/slick-next.png') no-repeat;
             right: 60px;
