@@ -147,7 +147,9 @@ var isMobile = {
                 if (window.windowWidth <= 480) {
                     goldenLand.Global.initGallerySlider();
                 } else {
-                    $('.zoom-gallery').slick('unslick');
+                    if ( $('.zoom-gallery').hasClass('slick-initialized') ) {
+                        $('.zoom-gallery').slick('unslick');
+                    }
                 }
             }).trigger('resize');
         },
