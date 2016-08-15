@@ -34,8 +34,11 @@ header {
 		margin: 0;
 		padding: 0;
 		width: 100%;
-		@include ab( 0, 0, n, n );
+		@include ab( 22px, 0, n, n );
 		display: none;
+		background-color: white;
+		padding: 15px;
+		z-index: 2;
 		@include screen ( medium ) {
 			float: right;
 			display: block;
@@ -43,14 +46,33 @@ header {
 			top: auto;
 			left: auto;
 			width: auto;
+			padding: 0;
+			background-color: transparent;
 		}
 
 		li {
-			display: inline-block;
-			vertical-align: middle;
-			padding-left: 70px;
-			&:first-child {
-				padding-left: 0;
+			@include screen ( medium ) {
+				display: inline-block;
+				vertical-align: middle;
+				padding-left: 25px;
+				&:first-child {
+					padding-left: 0;
+				}
+			}
+			@include screen ( ipad ) {
+				padding-left: 70px;
+			}
+			.active {
+				a {
+					color: #b4a67e;
+				}
+			}
+			@include screen ( medium ) {
+				&:hover {
+					a {
+						color: #b4a67e;
+					}
+				}
 			}
 
 			a {
@@ -60,9 +82,6 @@ header {
 				font-family: $font-sfut;
 				line-height: 44px;
 				text-transform: uppercase;
-				&:hover, &.active {
-					color: #b4a67e;
-				}
 			}
 		}
 	}

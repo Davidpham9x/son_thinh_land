@@ -33,15 +33,17 @@
     <section class="hotline">
         <div class="inner">
             <h4 class="title">Hotline liên hệ:</h4>
-            <a href="" title="Hotline" class="hotline-icon"></a>
-            <ul>
+            <a href="" title="Hotline" class="hotline__icon">
+                <i></i>
+            </a>
+            <ul class="hotline__content">
                 <li><a href="tel:0125 977 7777" title="0125 977 7777">0125 977 7777</a></li>
                 <li><a href="tel:0934 010 313" title="0934 010 313">0934 010 313</a></li>
             </ul>
         </div>
     </section>
     <!-- /* Introduction */ -->
-    <section class="introduction">
+    <section class="introduction" id="introduction">
         <h2 class="heading">
             Giới thiệu tổng quan
             <span>Vị trí địa lí và không gian nội thất</span>
@@ -72,9 +74,15 @@
             <hr class="full">
             <div class="interior clearfix">
                 <div class="interior__img interior__block">
-                    <img src="images/interiors/rooms_2/1.png" alt="" class="active">
-                    <img src="images/interiors/rooms_2/2.png" alt="">
-                    <img src="images/interiors/rooms_2/3.png" alt="">
+                    <div class="item">
+                        <img src="images/interiors/rooms_2/1.png" alt="" class="active">
+                    </div>
+                    <div class="item">
+                        <img src="images/interiors/rooms_2/2.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="images/interiors/rooms_2/3.png" alt="">
+                    </div>
                 </div>
                 <div class="interior__info interior__block">
                     <div class="inner">
@@ -114,15 +122,23 @@
                     </div>
                 </div>
                 <div class="interior__img interior__block">
-                    <img src="images/interiors/rooms_3/1.png" alt="" class="active">
-                    <img src="images/interiors/rooms_3/2.png" alt="">
+                    <div class="item">
+                        <img src="images/interiors/rooms_3/1.png" alt="" class="active">
+                    </div>
+                    <div class="item">
+                        <img src="images/interiors/rooms_3/2.png" alt="">
+                    </div>
                 </div>
             </div>
             <hr class="full">
             <div class="interior clearfix">
                 <div class="interior__img interior__block">
-                    <img src="images/interiors/rooms_penthouse/1.png" alt="" class="active">
-                    <img src="images/interiors/rooms_penthouse/2.png" alt="">
+                    <div class="item">
+                        <img src="images/interiors/rooms_penthouse/1.png" alt="" class="active">
+                    </div>
+                    <div class="item">
+                        <img src="images/interiors/rooms_penthouse/2.png" alt="">
+                    </div>
                 </div>
                 <div class="interior__info interior__block">
                     <div class="inner">
@@ -148,7 +164,7 @@
         </div>
     </section>
     <!-- /* Gallery */ -->
-    <section class="gallery">
+    <section class="gallery" id="gallery">
         <h2 class="heading">
             Thư viện
             <span>Hình ảnh khu căn hộ</span>
@@ -214,7 +230,7 @@
         </div>
     </section>
     <!-- /* Register */ -->
-    <section class="register">
+    <section class="register" id="register">
         <h2 class="heading">Đăng ký tham quan dự án</h2>
         <div class="container">
             <div class="inner">

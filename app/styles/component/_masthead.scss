@@ -20,9 +20,13 @@
         width: 100%;
         max-width: 640px;
         padding: 0 10px;
-        @include ab( 30%, 20%, n, n);
+        @include ab( 50%, 50%, n, n);
+        @include transform ( translate( -50%, -50% ) )
         @include screen ( medium) {
             padding: 0;
+            max-width: 65%;
+            @include ab( 30%, 20%, n, n);
+            @include transform ( translate( 0, 0 ) )
         }
     }
 }
@@ -49,6 +53,7 @@
             }
         }
         .text-small {
+            font-size: 19px;
             font-family: $font-sfus;
             @include screen( medium) {
                 font-size: 26px;
@@ -58,7 +63,10 @@
             }
         }
         .button {
-            margin-top: 35px;
+            margin-top: 10px;
+            @include screen( medium) {
+                margin-top: 35px;
+            }
         }
     }
     .slick-dots {
@@ -67,6 +75,10 @@
         width: 100%;
         text-align: center;
         @include ab( n, 0, 20px, n);
+        display: none;
+        @include screen( medium) {
+            display: block;
+        }
         li {
             display: inline-block;
             vertical-align: middle;
@@ -109,11 +121,17 @@
         }
         &.slick-next {
             background: url('../images/icons/slick-next.png') no-repeat;
-            right: 60px;
+            right: 30px;
+            @include screen ( ipadPortrait ) {
+                right: 60px;
+            }
         }
         &.slick-prev {
             background: url('../images/icons/slick-prev.png') no-repeat;
-            left: 60px;
+            left: 30px;
+            @include screen ( ipadPortrait ) {
+                left: 60px;
+            }
         }
     }
 }

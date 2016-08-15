@@ -5,19 +5,29 @@
 
 .button {
     border: none;
-    display: inline-block;
-    text-decoration: none;
+    display: block;
+    line-height: 29px;
+
     color: #fff;
-    font-size: 16px;
+    font-size: 12px;
     font-family: $font-sfut;
-    line-height: 56px;
+
+    text-align: center;
+    text-decoration: none;
     text-transform: uppercase;
     background-color: #b4a67e;
     @include CSSanimate(all, 500ms, ease);
     width: 100%;
+    max-width: 120px;
+    margin: 0 auto;
     @include screen ( medium ) {
         width: auto;
+        max-width: none;
         padding: 0 120px;
+        line-height: 56px;
+        display: inline-block;
+
+        font-size: 16px;
     }
     &:hover {
         background-color: lighten( #b4a67e, 10%);
@@ -25,11 +35,12 @@
 }
 
 .button--short {
-    font-size: 16px;
     color: #b4a67e;
     background-color: #fff;
     border: 1px solid #b4a67e;
-    padding: 0 35px;
+    @include screen ( medium ) {
+        padding: 0 35px;
+    }
     @include box-shadow( -1px, 1px, 18px, rgba(55, 55, 55, 0.5));
     &:hover {
         color: #fff;

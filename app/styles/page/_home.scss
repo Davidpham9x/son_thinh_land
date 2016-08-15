@@ -1,4 +1,6 @@
-.page-home {}
+.page-home {
+    overflow: hidden;
+}
 
 
 /*
@@ -8,8 +10,10 @@
 .hotline {
     background-color: #b0a37c;
     padding: 10px;
-    @include ab( 0, n, n, 0);
+    @include ab( 0, n, n, -145px );
+    @include transition( all 0.5s ease-in-out );
     @include screen ( medium ) {
+        right: 0;
         padding: 25px 30px;
     }
 
@@ -26,24 +30,31 @@
             display: block;
         }
     }
-    .hotline-icon {
+    .hotline__icon {
         display: block;
-        background: url('../images/icons/icon-hotline.png') no-repeat;
-        width: 15px;
-        height: 15px;
+        background-color: #b0a37c;
+        padding: 10px;
+        @include ab ( -10px, -44px, n, n );
 
         @include screen ( medium ) {
             display: none;
+        }
+
+        i {
+            background: url('../images/icons/icon-hotline.png') no-repeat;
+            width: 15px;
+            height: 15px;
+            display: block;
         }
     }
     ul {
         list-style: none;
         padding: 0;
         margin: 0;
-        display: none;
+        /* display: none;
         @include screen ( medium ) {
             display: block;
-        }
+        } */
 
         li {
             &:before {
@@ -79,13 +90,18 @@
         }
         hr {
             &.full {
+                margin: 20px 0;
                 border-top: 1px dashed #e8e8e8;
-                margin: 60px 0;
+                @include screen ( medium ) {
+                    margin: 60px 0;
+                }
             }
         }
     }
-    /* .interior {}
-    .interior-main {} */
+    .interior {
+        position: relative;
+    }
+    .interior-main {}
     .location {
         position: relative;
         .location__img {
@@ -94,11 +110,18 @@
             }
         }
         .interior__info {
-            @include ab( 52px, 60px, n, n );
+            margin-top: 10px;
+            @include screen ( medium ) {
+                margin-top: 0;
+                @include ab( 52px, 60px, n, n );
+            }
 
             .inner {
                 padding: 5px;
 
+                >img {
+                    width: 100%;
+                }
                 .title, p {
                     text-align: center;
                 }
@@ -115,22 +138,36 @@
         }
     }
     .interior__block {
-        float: right;
+        @include screen ( medium ) {
+            float: right;
 
-        &:first-child {
-            float: left;
+            &:first-child {
+                float: left;
+            }
         }
     }
     .interior__img {
-        img {
-            cursor: pointer;
-            padding-left: 15px;
-            &:first-child {
-                padding-left: 0;
+        text-align: center;
+
+        .item {
+            @include screen ( medium ) {
+                cursor: pointer;
+                padding-left: 15px;
+                display: inline-block;
+                &:first-child {
+                    padding-left: 0;
+                }
+                &:hover {
+                    @include bw();
+                }
             }
-            &:hover, &.active {
+            &.active {
                 @include bw();
             }
+        }
+        img {
+            display: block;
+            margin: 0 auto;
         }
     }
     .interior__info {
@@ -174,37 +211,41 @@
     }
     .interior__info--left {
         .inner {
-            &:after {
-                right: 100%;
-                top: 20%;
-                border: solid transparent;
-                content: " ";
-                height: 0;
-                width: 0;
-                position: absolute;
-                pointer-events: none;
-                border-color: rgba(255, 255, 255, 0);
-                border-right-color: #fff;
-                border-width: 16px;
-                margin-top: -16px;
+            @include screen ( medium ) {
+                &:after {
+                    right: 100%;
+                    top: 20%;
+                    border: solid transparent;
+                    content: " ";
+                    height: 0;
+                    width: 0;
+                    position: absolute;
+                    pointer-events: none;
+                    border-color: rgba(255, 255, 255, 0);
+                    border-right-color: #fff;
+                    border-width: 16px;
+                    margin-top: -16px;
+                }
             }
         }
     }
     .interior__info--right {
         .inner {
-            &:after {
-                left: 100%;
-                top: 20%;
-                border: solid transparent;
-                content: " ";
-                height: 0;
-                width: 0;
-                position: absolute;
-                pointer-events: none;
-                border-color: rgba(255, 255, 255, 0);
-                border-left-color: #fff;
-                border-width: 16px;
-                margin-top: -16px;
+            @include screen ( medium ) {
+                &:after {
+                    left: 100%;
+                    top: 20%;
+                    border: solid transparent;
+                    content: " ";
+                    height: 0;
+                    width: 0;
+                    position: absolute;
+                    pointer-events: none;
+                    border-color: rgba(255, 255, 255, 0);
+                    border-left-color: #fff;
+                    border-width: 16px;
+                    margin-top: -16px;
+                }
             }
         }
     }
