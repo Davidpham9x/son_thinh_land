@@ -82,11 +82,15 @@
         margin-top: 40px;
 
         p {
-            text-align: center;
             color: #a4966e;
             font-size: 14px;
             font-family: $font-sfus;
+            text-align: center;
             line-height: normal;
+            margin: 10px 0;
+            @include screen ( medium ) {
+                font-size: 12px;
+            }
         }
         hr {
             &.full {
@@ -110,13 +114,20 @@
             }
         }
         .interior__info {
-            margin-top: 10px;
-            position: relative;
             top: auto;
             left: auto;
+            width: 100%;
+            margin-top: 10px;
+            position: relative;
             @include screen ( medium ) {
+                width: 30%;
                 margin-top: 0;
-                @include ab( 52px, 60px, n, n );
+                @include ab( 50%, 3%, n, n );
+                @include transform ( translateY( -50% ) );
+            }
+            @include screen ( ipadPortrait ) {
+                width: 25%;
+                left: 8%;
             }
 
             .inner {
@@ -135,7 +146,7 @@
                     }
                 }
                 hr {
-                    margin: 1em auto;
+                    margin: 10px auto;
                 }
             }
         }
@@ -152,11 +163,12 @@
         }
     }
     .interior__img {
-        text-align: center;
+        margin: 0;
         width: 100%;
-        margin: 0 -15px;
+        text-align: center;
         @include screen ( medium ) {
             width: 60%;
+            margin: 0 -15px;
         }
         @include screen ( ipad ) {
             width: 75%;
@@ -176,6 +188,18 @@
 
             .inner {
                 width: 100%;
+                position: relative;
+
+                i {
+                    content: '';
+                    background: url('../images/icons/icon-zoom.png') no-repeat;
+                    width: 42px;
+                    height: 49px;
+                    @include ab ( n, n, 15px, 5px );
+                    @include screen ( medium ) {
+                        display: none;
+                    }
+                }
             }
         }
         img {
@@ -226,9 +250,11 @@
         }
     }
     .interior__info {
-        @include ab ( 0, 0, n, n );
-        z-index: 3;
+        height: 100%;
         width: 80%;
+        z-index: 3;
+        @include ab ( 0, 0, n, n );
+        @include transition ( all 0.5s ease-in-out );
         @include screen ( medium ) {
             width: 35%;
         }
@@ -241,11 +267,33 @@
             top: auto;
             left: auto;
         }
+        &.collapse {
+            i {
+                background: url('../images/icons/icon-expand.png') no-repeat;
+                right: -40px;
+            }
+        }
+        /* &.expand {} */
 
         .inner {
+            height: 100%;
             position: relative;
             background-color: white;
             padding: 30px;
+            overflow: hidden;
+            @include transition ( all 0.5s ease-in-out );
+        }
+        i {
+            content: '';
+            background: url('../images/icons/icon-collapse.png') no-repeat;
+            width: 60px;
+            height: 60px;
+            margin-top: -30px;
+            @include ab ( 50%, n, n, -30px );
+            @include transition ( all 0.5s ease-in-out );
+            @include screen ( medium ) {
+                display: none;
+            }
         }
         hr {
             background: url('../images/interiors/highlight.png') no-repeat;
@@ -255,19 +303,31 @@
         }
         .title {
             color: #012f75;
-            font-size: 23px;
+            font-size: 20px;
             font-family: $font-sfut;
             text-transform: uppercase;
             display: block;
             line-height: normal;
+            @include screen ( ipad ) {
+                font-size: 23px;
+            }
             &.type-small {
-                font-size: 14px;
+                font-size: 12px;
+                @include screen ( ipad ) {
+                    font-size: 14px;
+                }
             }
 
             span {
-                font-size: 23px;
                 display: block;
+                font-size: 20px;
                 line-height: normal;
+                @include screen ( medium ) {
+                    font-size: 16px;
+                }
+                @include screen ( ipad ) {
+                    font-size: 23px;
+                }
             }
         }
         p {
