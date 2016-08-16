@@ -111,6 +111,9 @@
         }
         .interior__info {
             margin-top: 10px;
+            position: relative;
+            top: auto;
+            left: auto;
             @include screen ( medium ) {
                 margin-top: 0;
                 @include ab( 52px, 60px, n, n );
@@ -138,6 +141,8 @@
         }
     }
     .interior__block {
+        display: inline-block;
+        vertical-align: top;
         @include screen ( medium ) {
             float: right;
 
@@ -148,15 +153,19 @@
     }
     .interior__img {
         text-align: center;
+        width: 100%;
+        margin: 0 -15px;
+        @include screen ( medium ) {
+            width: 60%;
+        }
+        @include screen ( ipad ) {
+            width: 75%;
+        }
 
         .item {
-            @include screen ( medium ) {
+            @include screen ( ipad ) {
                 cursor: pointer;
-                padding-left: 15px;
-                display: inline-block;
-                &:first-child {
-                    padding-left: 0;
-                }
+                padding: 0 15px;
                 &:hover {
                     @include bw();
                 }
@@ -164,20 +173,80 @@
             &.active {
                 @include bw();
             }
+
+            .inner {
+                width: 100%;
+            }
         }
         img {
+            width: 100%;
             display: block;
-            margin: 0 auto;
+            @include screen ( medium ) {
+                width: auto;
+                margin: 0 auto;
+            }
+            @include screen ( ipad ) {
+                width: 100%;
+            }
+        }
+        .slick-dots {
+            font-size: 0;
+            line-height: 0;
+            width: 100%;
+            text-align: center;
+            @include ab( n, 0, 20px, n);
+            display: none;
+            @include screen( medium) {
+                display: block;
+            }
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0 5px;
+                font-size: 0;
+                line-height: 0;
+                &.slick-active {
+                    button {
+                        border-color: #012f75;
+                    }
+                }
+                button {
+                    background: transparent;
+                    text-indent: -9999px;
+                    border: none;
+                    padding: 0;
+                    font-size: 0;
+                    border: 6px solid #fff;
+                    width: 0;
+                    height: 0;
+                    cursor: pointer;
+                    @include border-radius ( 50%, 50%, 50%, 50%);
+                }
+            }
         }
     }
     .interior__info {
+        @include ab ( 0, 0, n, n );
+        z-index: 3;
+        width: 80%;
+        @include screen ( medium ) {
+            width: 35%;
+        }
+        @include screen ( ipad ) {
+            width: 25%;
+        }
         @include box-shadow( 0px, 1px, 24px, rgba(55, 55, 55, 0.1) );
+        @include screen ( medium ) {
+            position: relative;
+            top: auto;
+            left: auto;
+        }
+
         .inner {
             position: relative;
             background-color: white;
             padding: 30px;
         }
-
         hr {
             background: url('../images/interiors/highlight.png') no-repeat;
             width: 45px;
@@ -247,6 +316,22 @@
                     margin-top: -16px;
                 }
             }
+        }
+    }
+    .interior__img--three-img {
+        overflow: hidden;
+
+        .item {
+            width: 33.333333%;
+            float: left;
+        }
+    }
+    .interior__img--two-img {
+        overflow: hidden;
+
+        .item {
+            width: 50%;
+            float: left;
         }
     }
 }

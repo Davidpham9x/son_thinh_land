@@ -155,15 +155,19 @@ var isMobile = {
                 window.windowWidth = $(window).width();
 
                 if (window.windowWidth <= 480) {
-                    goldenLand.Global.initGallerySlider();
+                    if ( !$('.zoom-gallery').hasClass('slick-initialized') ) {
+                        goldenLand.Global.initGallerySlider();
+                    }
                 } else {
                     if ( $('.zoom-gallery').hasClass('slick-initialized') ) {
                         $('.zoom-gallery').slick('unslick');
                     }
                 }
 
-                if (window.windowWidth <= 640) {
-                    goldenLand.Global.initSliderBlockHome();
+                if (window.windowWidth <= 1024) {
+                    if ( !$('.interior__img').hasClass('slick-initialized') ) {
+                        goldenLand.Global.initSliderBlockHome();
+                    }
                 } else {
                     if ( $('.interior__img').hasClass('slick-initialized') ) {
                         $('.interior__img').slick('unslick');
@@ -254,10 +258,19 @@ var isMobile = {
 
                     _this.find('.interior__img').slick({
                         infinite: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
                         speed: 500,
-                        fade: true,
                         arrows: false,
-                        cssEase: 'linear'
+                        dots: true,
+                        cssEase: 'linear',
+                        responsive: [{
+                            breakpoint: 640,
+                            settings: {
+                                fade: true
+                                // dots: false
+                            }
+                        }]
                     });
                 });
         }
