@@ -116,6 +116,7 @@
         .interior__info {
             top: auto;
             left: auto;
+            height: auto;
             width: 100%;
             margin-top: 10px;
             position: relative;
@@ -131,7 +132,9 @@
             }
 
             .inner {
+                height: auto;
                 padding: 5px;
+                overflow: visible;
 
                 >img {
                     width: 100%;
@@ -175,15 +178,18 @@
         }
 
         .item {
+            @include bw();
             @include screen ( ipad ) {
                 cursor: pointer;
                 padding: 0 15px;
                 &:hover {
-                    @include bw();
+                    filter: none;
+                    /* @include bw(); */
                 }
             }
             &.active {
-                @include bw();
+                filter: none;
+                /* @include bw(); */
             }
 
             .inner {
@@ -222,6 +228,7 @@
             @include screen( medium) {
                 display: block;
             }
+
             li {
                 display: inline-block;
                 vertical-align: middle;

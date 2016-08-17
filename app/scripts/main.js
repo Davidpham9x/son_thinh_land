@@ -34,6 +34,7 @@ var isMobile = {
             this.initTriggerScroll();
             this.initShowHotLineMobile();
             this.initExpandCollapse();
+            this.initChangeInfoHouse();
             // this.initZoomImg();
 
             /*goldenLand.Global.initSliderBlockHome();*/
@@ -176,9 +177,11 @@ var isMobile = {
                         goldenLand.Global.initSliderBlockHome();
                     }
                 } else {
-                    if ( $('.interior__img').hasClass('slick-initialized') ) {
-                        $('.interior__img').slick('unslick');
-                    }
+                    setTimeout(function() {
+                        if ( $('.interior__img').hasClass('slick-initialized') ) {
+                            $('.interior__img').slick('unslick');
+                        }
+                    }, 100);
                 }
 
             }).trigger('resize');
@@ -279,6 +282,21 @@ var isMobile = {
                             }
                         }]
                     });
+
+                    // Fires after first initialization.
+                    _this.find('.interior__img').on('init', function() {
+                    });
+
+                    _this.find('.active').removeClass('active');
+                    _this.find('.interior__img').find('.item').eq( 1 ).addClass('active');
+                    _this.find('.info-house').html( _this.find('.interior__img').find('.item').eq( 1 ).attr('data-info-house') );
+
+                    // Fires after slide change.
+                    _this.find('.interior__img').on('afterChange', function(event, slick, currentSlide, nextSlide) {
+                        _this.find('.interior__img').find('.item').removeClass('active');
+                        _this.find('.interior__img').find('.item').eq( currentSlide + 1 ).addClass('active');
+                        _this.find('.info-house').html( _this.find('.interior__img').find('.item').eq( currentSlide + 1 ).attr('data-info-house') );
+                    });
                 });
         },
 
@@ -323,6 +341,26 @@ var isMobile = {
                                 on: 'grab',
                                 url: _iTag.attr('data-url'),
                             });*/
+                        });
+                });
+        },
+
+        initChangeInfoHouse: function () {
+            var houseContents = $('.interior');
+
+                houseContents.each(function () {
+                    var _this = $(this),
+                        typeHouse = _this.find('.item'),
+                        houseInfo = _this.find('.interior__info .info-house');
+
+                        typeHouse.each(function () {
+                            var type = $(this);
+
+                                type.off('click').on('click', function () {
+                                    typeHouse.removeClass('active');
+                                    type.addClass('active');
+                                    houseInfo.html( type.attr('data-info-house') );
+                                });
                         });
                 });
         }
