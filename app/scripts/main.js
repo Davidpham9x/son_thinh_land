@@ -34,9 +34,9 @@ var isMobile = {
             this.initTriggerScroll();
             this.initShowHotLineMobile();
             this.initExpandCollapse();
-            this.initZoomImg();
-            /*this.initSliderBlockHome();*/
+            // this.initZoomImg();
 
+            /*goldenLand.Global.initSliderBlockHome();*/
             /*goldenLand.Global.initModalSuccessful();*/
         },
 

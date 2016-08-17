@@ -196,9 +196,8 @@
                     width: 42px;
                     height: 49px;
                     @include ab ( n, n, 15px, 5px );
-                    @include screen ( medium ) {
-                        display: none;
-                    }
+                    display: none;
+                    /* @include screen ( medium ) {} */
                 }
             }
         }
